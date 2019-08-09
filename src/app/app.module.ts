@@ -15,6 +15,14 @@ import {MatDividerModule} from '@angular/material/divider';
 import { QuizComponent } from './Quiz/quiz.component';
 import { HomeComponent } from './Home/home.component';
 import { AboutComponent } from './About/about.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatInputModule, MatSelectModule} from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -35,6 +43,17 @@ import { AboutComponent } from './About/about.component';
     AppRoutingModule,
     MatButtonModule,
     MatDividerModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatCardModule,
+    MatStepperModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

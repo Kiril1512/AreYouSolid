@@ -1,1 +1,231 @@
-<p>questions works!</p>
+<mat-horizontal-stepper labelPosition="bottom" linear #stepper>
+    <mat-step [editable]="false">
+        <ng-template matStepLabel></ng-template>
+        <label>Solid principles was promoted by which of these?</label><br>
+        <a>You don't realy need to know this but give it a try ;)</a><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Robert
+            Hook</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Robert Hook</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Robert
+            Rich</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Robert Rich</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('correct')" *ngIf="!isClicked()">Robert
+            Martins</button><button type="button" class="btn btn-success" *ngIf="isClicked()">Robert
+            Martins</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Robert
+            Dawn</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Robert Dawn</button><br><br>
+
+        <button mat-stroked-button matStepperNext [disabled]="!isClicked()" (click)="cleanClick()">Next</button><br>
+    </mat-step>
+
+    <mat-step [editable]="false">
+        <ng-template matStepLabel></ng-template>
+        <label>The SOLID acronym in Solid principles was introduced by </label><br>
+        <a>You don't realy need to know this but give it a try ;)</a><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('correct')" *ngIf="!isClicked()">Micheal
+            Feathers</button><button type="button" class="btn btn-success" *ngIf="isClicked()">Micheal
+            Feathers</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Micheal
+            Wright</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Micheal
+            Wright</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Micheal
+            Sheep</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Micheal
+            Sheep</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Micheal
+            Brown</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Micheal
+            Brown</button><br><br>
+
+        <button mat-stroked-button matStepperNext [disabled]="!isClicked()" (click)="cleanClick()">Next</button><br>
+    </mat-step>
+
+    <mat-step [editable]="false">
+        <ng-template matStepLabel></ng-template>
+        <label>Concerning the solid principle which of these is odd?</label><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Dependency
+            Inversion Principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Dependency
+            Inversion Principle</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Leskov
+            Subtituition Principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Leskov
+            Subtituition Principle</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Interface
+            Segregation Principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Interface
+            Segregation Principle</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('correct')" *ngIf="!isClicked()">Interface
+            Subtituition Principle</button><button type="button" class="btn btn-success" *ngIf="isClicked()">Interface
+            Subtituition Principle</button><br><br>
+
+        <button mat-stroked-button matStepperNext [disabled]="!isClicked()" (click)="cleanClick()">Next</button><br>
+    </mat-step>
+
+    <mat-step [editable]="false">
+        <ng-template matStepLabel></ng-template>
+        <label>The five design principles make software design more</label><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')"
+            *ngIf="!isClicked()">Distinct</button><button type="button" class="btn btn-danger"
+            *ngIf="isClicked()">Distinct</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')"
+            *ngIf="!isClicked()">Useful</button><button type="button" class="btn btn-danger"
+            *ngIf="isClicked()">Useful</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')"
+            *ngIf="!isClicked()">Autonomous</button><button type="button" class="btn btn-danger"
+            *ngIf="isClicked()">Autonomous</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('correct')"
+            *ngIf="!isClicked()">Maintainable</button><button type="button" class="btn btn-success"
+            *ngIf="isClicked()">Maintainable</button><br><br>
+
+        <button mat-stroked-button matStepperNext [disabled]="!isClicked()" (click)="cleanClick()">Next</button><br>
+    </mat-step>
+
+    <mat-step [editable]="false">
+        <ng-template matStepLabel></ng-template>
+        <label>Solid principles form a core philosophy for methodologies like</label><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Code
+            development</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Code
+            development</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Design
+            development</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Design
+            development</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Software
+            development</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Software
+            development</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('correct')" *ngIf="!isClicked()">Agile
+            development</button><button type="button" class="btn btn-success" *ngIf="isClicked()">Agile
+            development</button><br><br>
+
+        <button mat-stroked-button matStepperNext [disabled]="!isClicked()" (click)="cleanClick()">Next</button><br>
+    </mat-step>
+
+    <mat-step [editable]="false">
+        <ng-template matStepLabel></ng-template>
+        <label>In single responsibility principle, the responsibility for a class is</label><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')"
+            *ngIf="!isClicked()">Defined</button><button type="button" class="btn btn-danger"
+            *ngIf="isClicked()">Defined</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('correct')"
+            *ngIf="!isClicked()">Single</button><button type="button" class="btn btn-success"
+            *ngIf="isClicked()">Single</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')"
+            *ngIf="!isClicked()">Simple</button><button type="button" class="btn btn-danger"
+            *ngIf="isClicked()">Simple</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')"
+            *ngIf="!isClicked()">Double</button><button type="button" class="btn btn-danger"
+            *ngIf="isClicked()">Double</button><br><br>
+
+        <button mat-stroked-button matStepperNext [disabled]="!isClicked()" (click)="cleanClick()">Next</button><br>
+    </mat-step>
+
+    <mat-step [editable]="false">
+        <ng-template matStepLabel></ng-template>
+        <label>In open/close principles, the software entities are open for extension but closed for</label><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')"
+            *ngIf="!isClicked()">Corrections</button><button type="button" class="btn btn-danger"
+            *ngIf="isClicked()">Corrections</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')"
+            *ngIf="!isClicked()">Errors</button><button type="button" class="btn btn-danger"
+            *ngIf="isClicked()">Errors</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('correct')"
+            *ngIf="!isClicked()">Modifications</button><button type="button" class="btn btn-success"
+            *ngIf="isClicked()">Modifications</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')"
+            *ngIf="!isClicked()">Development</button><button type="button" class="btn btn-danger"
+            *ngIf="isClicked()">Development</button><br><br>
+
+        <button mat-stroked-button matStepperNext [disabled]="!isClicked()" (click)="cleanClick()">Next</button><br>
+    </mat-step>
+
+    <mat-step [editable]="false">
+        <ng-template matStepLabel></ng-template>
+        <label>In Leskov substitution principle, "objects in a program should be replaceable with instances of
+            their</label><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('correct')"
+            *ngIf="!isClicked()">Subtypes</button><button type="button" class="btn btn-success"
+            *ngIf="isClicked()">Subtypes</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')"
+            *ngIf="!isClicked()">Types</button><button type="button" class="btn btn-danger"
+            *ngIf="isClicked()">Types</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Base
+            Clase</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Base Clase</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')"
+            *ngIf="!isClicked()">Command</button><button type="button" class="btn btn-danger"
+            *ngIf="isClicked()">Command</button><br><br>
+
+        <button mat-stroked-button matStepperNext [disabled]="!isClicked()" (click)="cleanClick()">Next</button><br>
+    </mat-step>
+
+    <mat-step [editable]="false">
+        <ng-template matStepLabel></ng-template>
+        <label>Client-specific interfaces are better than one general-purpose interface in</label><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Single
+            responsibility principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Single
+            responsibility principle</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Open/Close
+            principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Open/Close
+            principle</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Liskov
+            substitution principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Liskov
+            substitution principle</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('correct')" *ngIf="!isClicked()">Interface
+            segregation principle</button><button type="button" class="btn btn-success" *ngIf="isClicked()">Interface
+            segregation principle</button><br><br>
+
+        <button mat-stroked-button matStepperNext [disabled]="!isClicked()" (click)="cleanClick()">Next</button><br>
+    </mat-step>
+
+    <mat-step [editable]="false">
+        <ng-template matStepLabel></ng-template>
+        <label>Solid principle is also called</label><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Solid-oriented
+            principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Solid-oriented
+            principle</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Solid-based
+            principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Solid-based
+            principle</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('correct')" *ngIf="!isClicked()">Object-oriented
+            principle</button><button type="button" class="btn btn-success" *ngIf="isClicked()">Object-oriented
+            principle</button><br><br>
+        <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">Object-based
+            principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">Object-based
+            principle</button><br><br>
+
+        <button mat-stroked-button matStepperNext [disabled]="!isClicked()" (click)="cleanClick()">Next</button><br>
+        <a *ngIf="isClicked()">Now lets try some code...</a>
+    </mat-step>
+
+    <mat-step [editable]="false">
+        <ng-template matStepLabel></ng-template>
+        <div class="col-md-3">
+            <label>What principle this code violates?</label><br>
+            <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">S — Single
+                responsibility principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">S —
+                Single responsibility principle</button><br><br>
+            <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">O —
+                Open/closed principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">O —
+                Open/closed principle</button><br><br>
+            <button type="button" class="btn btn-primary" (click)="clicked('correct')" *ngIf="!isClicked()">L — Liskov
+                substitution principle</button><button type="button" class="btn btn-success" *ngIf="isClicked()">L —
+                Liskov substitution principle</button><br><br>
+            <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">I — Interface
+                segregation principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">I —
+                Interface segregation principle</button><br><br>
+            <button type="button" class="btn btn-primary" (click)="clicked('wrong')" *ngIf="!isClicked()">D — Dependency
+                inversion principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">D —
+                Dependency inversion principle</button><br><br>
+
+            <button mat-stroked-button matStepperNext [disabled]="!isClicked()" (click)="cleanClick()">Next</button><br>
+        </div>
+        <div class="col-md-9">
+            <mat-card>
+                <pre>
+                    <code [innerHTML]="code"></code>
+                </pre>
+            </mat-card>
+        </div>
+    </mat-step>
+
+    <mat-step [editable]="false">
+        <ng-template matStepLabel></ng-template>
+        You are now done.
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

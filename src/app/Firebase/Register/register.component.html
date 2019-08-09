@@ -1,1 +1,12 @@
-<p>register works!</p>
+<div class="example-container">
+    <mat-form-field>
+        <input matInput placeholder="Enter your email" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Enter your name" [formControl]="name" required>
+        <mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" [disabled]="!email.valid || !name.valid">Submit and compare results!</button>
+</div>
