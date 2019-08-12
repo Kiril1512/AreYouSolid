@@ -1,0 +1,21 @@
+class Post
+{
+    private Logger _logger;
+
+    public Post(Logger injectedLogger)
+    {
+        _logger = injectedLogger;
+    }
+
+    void CreatePost(Database db, string postMessage)
+    {
+        try
+        {
+            db.Add(postMessage);
+        }
+        catch (Exception ex)
+        {
+            logger.log(ex.ToString())
+        }
+    }
+}

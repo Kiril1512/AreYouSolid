@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PointsService } from '../Points/points.service';
 
 @Component({
   selector: 'app-results',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pointsService: PointsService) { }
+
+  points : number;
+  hasPoints: boolean;
 
   ngOnInit() {
+    //get the points
+    this.points = this.pointsService.returnPoints();
+
+    //trigger flag if has points
+    this.points == -1 ? this.hasPoints = false : this.hasPoints = true;
   }
 
 }

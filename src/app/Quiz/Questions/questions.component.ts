@@ -1,77 +1,87 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { PointsService } from '../Points/points.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-questions',
   templateUrl: './questions.component.html',
   styleUrls: ['./questions.component.css'],
 })
-export class QuestionsComponent implements OnInit {
+export class QuestionsComponent implements OnInit, OnDestroy {
 
+  //variables
   points: number;
   click: boolean;
 
-  code = `
-  class Post
-  {
-      void CreatePost(Database db, string postMessage)
-      {
-          db.Add(postMessage);
-      }
-  }
-  
-  class TagPost : Post
-  {
-      override void CreatePost(Database db, string postMessage)
-      {
-          db.AddAsTag(postMessage);
-      }
-  }
-  
-  class MentionPost : Post
-  {
-      void CreateMentionPost(Database db, string postMessage)
-      {
-          string user = postMessage.parseUser();
-  
-          db.NotifyUser(user);
-          db.OverrideExistingMention(user, postMessage);
-          base.CreatePost(db, postMessage);
-      }
-  }
-  
-  class PostHandler
-  {
-      private database = new Database();
-  
-      void HandleNewPosts() {
-          List<string> newPosts = database.getUnhandledPostsMessages();
-  
-          foreach (string postMessage in newPosts)
-          {
-              Post post;
-  
-              if (postMessage.StartsWith("#"))
-              {
-                  post = new TagPost();
-              }
-              else if (postMessage.StartsWith("@"))
-              {
-                  post = new MentionPost();
-              }
-              else {
-                  post = new Post();
-              }
-  
-              post.CreatePost(database, postMessage);
-          }
-      }
-  }`
+  //variables for subscription 
+  code_example_1 : string;
+  code_example_2 : string;
+  code_example_3 : string;
+  code_example_4 : string;
+  code_example_5 : string;
+  code_example_10 : string;
+  code_example_20 : string;
+  code_example_30 : string;
+  code_example_40 : string;
+  code_example_50 : string;
 
-  constructor() { }
+  //#region read code examples
+
+  //read the text files with code examples.
+  code_1 = this.http.get('assets/code_example/wrong_code_example_1.txt', {responseType: 'text'})
+  .subscribe(data => this.code_example_1 = data.toString());
+
+  code_2 = this.http.get('assets/code_example/wrong_code_example_2.txt', {responseType: 'text'})
+  .subscribe(data => this.code_example_2 = data.toString());
+
+  code_3 = this.http.get('assets/code_example/wrong_code_example_3.txt', {responseType: 'text'})
+  .subscribe(data => this.code_example_3 = data.toString());
+
+  code_4 = this.http.get('assets/code_example/wrong_code_example_4.txt', {responseType: 'text'})
+  .subscribe(data => this.code_example_4 = data.toString());
+
+  code_5 = this.http.get('assets/code_example/wrong_code_example_5.txt', {responseType: 'text'})
+  .subscribe(data => this.code_example_5 = data.toString());
+
+  code_6 = this.http.get('assets/code_example/correct_code_example_1.txt', {responseType: 'text'})
+  .subscribe(data => this.code_example_10 = data.toString());
+
+  code_7 = this.http.get('assets/code_example/correct_code_example_2.txt', {responseType: 'text'})
+  .subscribe(data => this.code_example_20 = data.toString());
+
+  code_8 = this.http.get('assets/code_example/correct_code_example_3.txt', {responseType: 'text'})
+  .subscribe(data => this.code_example_30 = data.toString());
+
+  code_9 = this.http.get('assets/code_example/correct_code_example_4.txt', {responseType: 'text'})
+  .subscribe(data => this.code_example_40 = data.toString());
+
+  code_10 = this.http.get('assets/code_example/correct_code_example_5.txt', {responseType: 'text'})
+  .subscribe(data => this.code_example_50 = data.toString());
+
+  //#endregion
+
+  constructor(private http: HttpClient , private pointsService: PointsService) { }
 
   ngOnInit() {
-    this.points = 0;
     this.click = false;
+
+    //add a point to start on 0.
+    this.pointsService.addPoints();
+  }
+
+  //On Destroy unsubsribe to the subsription.
+  ngOnDestroy()
+  {
+    this.code_1.unsubscribe();
+    this.code_2.unsubscribe();
+    this.code_3.unsubscribe();
+    this.code_4.unsubscribe();
+    this.code_5.unsubscribe();
+    this.code_6.unsubscribe();
+    this.code_7.unsubscribe();
+    this.code_8.unsubscribe();
+    this.code_9.unsubscribe();
+    this.code_10.unsubscribe();
   }
 
   //this method recives the click event
@@ -91,14 +101,13 @@ export class QuestionsComponent implements OnInit {
   //this method clears the click event
   cleanClick() {
     this.click = false;
-    console.log(this.click)
   }
 
   //this methods verify if answer is correct to add points
   checkAnswer(answer: string) {
     if (answer == "correct") {
-      this.points++;
+      this.pointsService.addPoints();
     }
-    console.log("Points: " + this.points);
+    console.log("Points: " + this.pointsService.returnPoints());
   }
 }

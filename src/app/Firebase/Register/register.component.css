@@ -1,10 +1,8 @@
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .container > * {
-    width: 100%;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container > * {
+  width: 75%;
+}

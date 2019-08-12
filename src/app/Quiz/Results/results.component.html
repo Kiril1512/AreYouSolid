@@ -1,1 +1,13 @@
-<p>results works!</p>
+<div class="row">
+    <div class="col-md-12">
+            <div class="col-md-12" *ngIf="!this.hasPoints">
+                    <app-anonymous></app-anonymous>
+                </div>
+        <div class="col-md-6" *ngIf="this.hasPoints">
+            <app-anonymous></app-anonymous>
+        </div>
+        <div class="col-md-6" *ngIf="this.hasPoints">
+            <app-register></app-register>
+        </div>
+    </div>
+</div>

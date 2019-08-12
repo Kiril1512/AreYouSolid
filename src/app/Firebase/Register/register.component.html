@@ -1,12 +1,12 @@
-<div class="example-container">
-    <mat-form-field>
-        <input matInput placeholder="Enter your email" [formControl]="email" required>
-        <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
-    </mat-form-field>
+<p>Do you want to compare your score with your colleagues and see who is in top 5 ranking by this Quiz
+    knowledge? Register now and compare your results with others!</p>
+<br>
+<div class="container">
     <mat-form-field>
         <input matInput placeholder="Enter your name" [formControl]="name" required>
         <mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error>
     </mat-form-field>
     <br>
-    <button mat-raised-button color="primary" [disabled]="!email.valid || !name.valid">Submit and compare results!</button>
+    <button mat-raised-button color="primary" [disabled]="!name.valid">Submit and compare
+        results!</button>
 </div>
