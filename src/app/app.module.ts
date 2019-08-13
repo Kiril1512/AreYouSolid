@@ -9,36 +9,38 @@ import { ResultsComponent } from './Quiz/Results/results.component';
 import { AnonymousComponent } from './Quiz/Results/Anonymous/anonymous.component';
 import { DataComponent } from './Firebase/Data/data.component';
 import { RegisterComponent } from './Firebase/Register/register.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 import { HomeComponent } from './Home/home.component';
 import { AboutComponent } from './About/about.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatInputModule, MatSelectModule} from '@angular/material';
-import {MatCardModule} from '@angular/material/card';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatIconModule} from '@angular/material/icon';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule, MatSelectModule, MatSortModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { HighlightModule } from 'ngx-highlightjs';
- 
+import { MatTableModule } from '@angular/material/table';
 import xml from 'highlight.js/lib/languages/xml';
 import csp from 'highlight.js/lib/languages/csp';
 import typescript from 'highlight.js/lib/languages/typescript';
 import { HttpClientModule } from '@angular/common/http';
 import { PointsService } from './Quiz/Points/points.service';
- 
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+
 /**
  * Import every language you wish to highlight here
  * NOTE: The name of each language must match the file name its imported from
  */
 export function hljsLanguages() {
   return [
-    {name: 'typescript', func: typescript},
-    {name: 'csp', func: csp},
-    {name: 'xml', func: xml}
+    { name: 'typescript', func: typescript },
+    { name: 'csp', func: csp },
+    { name: 'xml', func: xml }
   ];
 }
 
@@ -73,9 +75,13 @@ export function hljsLanguages() {
     HighlightModule.forRoot({
       languages: hljsLanguages
     }),
-    HttpClientModule
+    HttpClientModule,
+    MatProgressBarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
-  providers: [PointsService],
+  providers: [PointsService, DataComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

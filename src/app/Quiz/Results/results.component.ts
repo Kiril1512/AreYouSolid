@@ -10,7 +10,7 @@ export class ResultsComponent implements OnInit {
 
   constructor(private pointsService: PointsService) { }
 
-  points : number;
+  points: number;
   hasPoints: boolean;
 
   ngOnInit() {
@@ -20,5 +20,4 @@ export class ResultsComponent implements OnInit {
     //trigger flag if has points
     this.points == -1 ? this.hasPoints = false : this.hasPoints = true;
   }
-
 }

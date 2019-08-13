@@ -7,14 +7,22 @@ export class PointsService {
 
   constructor() { }
 
-  addPoints()
+  addPoints(addPoints: number)
   {
-      this.points++;
+    if (addPoints != null) {
+      this.points += addPoints;
+    }
+      
   }
 
   returnPoints(): number
   {
       return this.points;
+  }
+
+  setPoints()
+  {
+    this.points = 0;
   }
 
 }

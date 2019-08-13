@@ -8,10 +8,14 @@ import { PointsService } from '../../Points/points.service';
 })
 export class AnonymousComponent implements OnInit {
 
+  filtered_points : string;
+  progress_points: number;
+  progress_color: string = "warn";
+
   constructor(private poinstService: PointsService) { }
 
   @Input() points: number;
-  filtered_points : string;
+  
   
   ngOnInit() {
     this.getPoints();
@@ -20,13 +24,23 @@ export class AnonymousComponent implements OnInit {
   getPoints()
   {
     this.points = this.poinstService.returnPoints();
-    console.log(this.points);
 
     if (this.points == -1) {
       this.filtered_points = "no points!";
+      this.progress_points = 0;
     }
     else{
-      this.filtered_points = this.points.toString() + " of 20!";
+      this.filtered_points = this.points.toString() + " of 20 points!";
+      this.progress();
+    }
+  }
+
+  progress()
+  {
+    this.progress_points = this.points * 100 / 20;
+
+    if (this.progress_points >= 50) {
+      this.progress_color = "primary"
     }
   }
 
