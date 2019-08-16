@@ -1,21 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { data } from './data.interface';
 
-@Component({
-  selector: 'app-data',
-  templateUrl: './data.component.html',
-  styleUrls: ['./data.component.css']
-})
-export class DataComponent implements OnInit {
+@Injectable()
+export class DataService {
 
   constructor(private http: HttpClient) { }
 
   //firebase URL.
   url: string = 'https://areyousolid-8494d.firebaseio.com/';
-
-  ngOnInit() {
-  }
 
   //this method post the data to the firebase.
   post(data: data) {

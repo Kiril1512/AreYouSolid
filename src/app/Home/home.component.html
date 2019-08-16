@@ -1,27 +1,33 @@
 <div style="text-align:center">
-    <h1>
-        Are You SOLID? by Kyrylo Yavorenko!
-    </h1>
-    <img width="300" alt="SOLID"
-        src="./assets/Images/SOLID.png">
+    <img width="300" alt="SOLID" src="./assets/Images/SOLID.png">
 </div>
 <h2 style="text-align:center">Please choose an option!</h2>
 <mat-divider></mat-divider>
 <br>
 <div class="row">
     <div class="col-md-12">
-        <div class="col-md-6" style="text-align:center">
-            <button mat-raised-button color="primary" routerLink="/Questions" routerLinkActive="active">Start Quiz!</button>
+        <div class="col-md-6" style="text-align:center" *ngIf="!this.isUser">
+            <button mat-raised-button color="primary" routerLink="/Questions" routerLinkActive="active"
+                [disabled]="this.isUser">Start Quiz!</button>
             <br>
             <br>
-            <p>Start a quiz with SOLID questions to see if you know these principles. At the end you will be given a score witch if you want you can compare with other people.</p>
+            <p>Start a quiz with SOLID questions to see if you know these principles. At the end you will be given a
+                score witch if you want you can compare with other people.</p>
+        </div>
+        <div class="col-md-6" style="text-align:center" *ngIf="this.isUser">
+            <button mat-raised-button color="primary" routerLink="/Results" routerLinkActive="active"
+                [disabled]="!this.isUser">Results</button>
+            <br>
+            <br>
+            <p>You have already done the Quiz, go see the Results.</p>
         </div>
         <div class="col-md-6" style="text-align:center">
             <button mat-raised-button color="primary" routerLink="/LearnSOLID" routerLinkActive="active">Learn
                 SOLID</button>
-                <br>
-                <br>
-                <p>If you not familiar with SOLID principles you can learn about it with useful links and courses here!</p>
+            <br>
+            <br>
+            <p>If you not familiar with SOLID principles you can learn about it with useful links and courses here!
+            </p>
         </div>
     </div>
 </div>

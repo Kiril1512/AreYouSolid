@@ -15,7 +15,7 @@ export class PointsService {
       
   }
 
-  returnPoints(): number
+  getPoints(): number
   {
       return this.points;
   }
@@ -25,4 +25,8 @@ export class PointsService {
     this.points = 0;
   }
 
+  setExistingPoints(pointsToSet: number)
+  {
+    this.points = pointsToSet;
+  }
 }

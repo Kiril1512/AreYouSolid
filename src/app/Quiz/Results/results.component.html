@@ -1,11 +1,13 @@
 <div class="col-md-12">
-    <div class="col-md-12" *ngIf="!this.hasPoints">
-        <app-anonymous></app-anonymous>
+    <div class="col-md-6">
+        <div class="center">
+            <p>You got: {{this.filtered_points}}</p>
+            <mat-progress-bar [mode]="this.mode" [value]="this.progress_points" [color]="this.progress_color"></mat-progress-bar>
+            <br>
+            <img src="/assets/Images/trophy.png" alt="Congrats!">
+        </div>
     </div>
-    <div class="col-md-6" *ngIf="this.hasPoints">
-        <app-anonymous></app-anonymous>
-    </div>
-    <div class="col-md-6" *ngIf="this.hasPoints">
+    <div class="col-md-6">
         <app-register></app-register>
     </div>
 </div>

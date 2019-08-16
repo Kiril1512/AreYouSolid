@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { LearnSolidComponent } from './LearnSolid/learn-solid.component';
 import { QuestionsComponent } from './Quiz/Questions/questions.component';
 import { ResultsComponent } from './Quiz/Results/results.component';
-import { AnonymousComponent } from './Quiz/Results/Anonymous/anonymous.component';
-import { DataComponent } from './Firebase/Data/data.component';
+import { DataService } from './Firebase/Data/data.service';
 import { RegisterComponent } from './Firebase/Register/register.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -31,6 +30,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { PointsService } from './Quiz/Points/points.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
+// Firebase App (the core Firebase SDK) is always required and must be listed first
+import * as firebase from "firebase/app";
+
+// Add the Firebase products that you want to use
+import "firebase/auth";
+import "firebase/database";
+import { AuthGuardService } from './Firebase/Auth/auth-guard.service';
+import { AuthService } from './Firebase/Auth/auth.service';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCSCJKzZGfkOObEU39jjx4halHdDiFkyrg",
+  authDomain: "areyousolid-8494d.firebaseapp.com",
+  databaseURL: "https://areyousolid-8494d.firebaseio.com",
+  projectId: "areyousolid-8494d",
+  storageBucket: "",
+  messagingSenderId: "640030276152",
+  appId: "1:640030276152:web:e8ec268ab01d699b"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 /**
  * Import every language you wish to highlight here
@@ -50,11 +70,9 @@ export function hljsLanguages() {
     LearnSolidComponent,
     QuestionsComponent,
     ResultsComponent,
-    AnonymousComponent,
-    DataComponent,
     RegisterComponent,
     HomeComponent,
-    AboutComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +99,7 @@ export function hljsLanguages() {
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [PointsService, DataComponent],
+  providers: [PointsService, DataService, RegisterComponent, ResultsComponent, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

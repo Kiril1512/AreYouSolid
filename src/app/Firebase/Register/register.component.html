@@ -1,4 +1,4 @@
-<div *ngIf="!this.dataIsReady">
+<div *ngIf="!this.dataIsReady && !this.noPointsForThisUser">
     <p>Do you want to compare your score with your colleagues and see who is in top 5 ranking by this Quiz
         knowledge? Register now and compare your results with others!</p>
 </div>
@@ -6,9 +6,13 @@
     <p>Results: </p>
 </div>
 
+<div *ngIf="this.noPointsForThisUser">
+    <p>Sorry it seems like you have no points, since you did not submited the results... You can not upload your result now!</p>
+</div>
+
 <mat-progress-bar *ngIf="this.submited && !this.dataIsReady" mode="indeterminate"></mat-progress-bar>
 
-<div *ngIf="!this.submited" >
+<div *ngIf="!this.submited && !this.dataIsReady">
     <mat-form-field>
         <input matInput placeholder="Enter your name" [formControl]="name" required>
         <mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error>
@@ -21,12 +25,14 @@
     <br>
 </div>
 
+
 <div>
     <mat-form-field *ngIf="this.submited && this.dataIsReady">
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
 
-    <table mat-table [dataSource]="this.dataSource" matSort matSortActive="points" class="mat-elevation-z8" matSortDisableClear matSortDirection="desc">
+    <table mat-table [dataSource]="this.dataSource" matSort matSortActive="points" class="mat-elevation-z8"
+        matSortDisableClear matSortDirection="desc">
 
         <!-- Name Column -->
         <ng-container matColumnDef="name">
