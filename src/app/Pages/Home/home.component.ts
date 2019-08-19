@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
-import { RegisterComponent } from '../Firebase/Register/register.component';
+import { RegisterComponent } from '../Quiz/Register/register.component';
 
 @Component({
   selector: 'app-home',

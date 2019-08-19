@@ -3,15 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LearnSolidComponent } from './LearnSolid/learn-solid.component';
-import { QuestionsComponent } from './Quiz/Questions/questions.component';
-import { ResultsComponent } from './Quiz/Results/results.component';
+import { LearnSolidComponent } from './Pages/LearnSolid/learn-solid.component';
+import { QuestionsComponent } from './Pages/Quiz/Questions/questions.component';
+import { ResultsComponent } from './Pages/Quiz/Results/results.component';
 import { DataService } from './Firebase/Data/data.service';
-import { RegisterComponent } from './Firebase/Register/register.component';
+import { RegisterComponent } from './Pages/Quiz/Register/register.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
-import { HomeComponent } from './Home/home.component';
-import { AboutComponent } from './About/about.component';
+import { HomeComponent } from './Pages/Home/home.component';
+import { AboutComponent } from './Pages/About/about.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,13 +27,10 @@ import xml from 'highlight.js/lib/languages/xml';
 import csp from 'highlight.js/lib/languages/csp';
 import typescript from 'highlight.js/lib/languages/typescript';
 import { HttpClientModule } from '@angular/common/http';
-import { PointsService } from './Quiz/Points/points.service';
+import { PointsService } from './Shared/Points/points.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
-// Firebase App (the core Firebase SDK) is always required and must be listed first
 import * as firebase from "firebase/app";
-
-// Add the Firebase products that you want to use
 import "firebase/auth";
 import "firebase/database";
 import { AuthGuardService } from './Firebase/Auth/auth-guard.service';
@@ -59,7 +56,7 @@ firebase.initializeApp(firebaseConfig);
 export function hljsLanguages() {
   return [
     { name: 'typescript', func: typescript },
-    { name: 'csp', func: csp },
+    { name: 'csp', func: csp }, //c#
     { name: 'xml', func: xml }
   ];
 }

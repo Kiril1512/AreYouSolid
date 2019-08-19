@@ -9,7 +9,7 @@ export class AuthGuardService implements CanActivate {
   
   //This method returns if a route can be activated
   canActivate(): boolean {
-      //if user is not authenticated it means that the quiz was not done, so can active /Questions
+      //if user is not authenticated it means that the quiz was not done, so he can active route: /Questions
     if (!this.auth.isAuthenticated()) {
       return true;
     }

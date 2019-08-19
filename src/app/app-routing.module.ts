@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
-import { LearnSolidComponent } from './LearnSolid/learn-solid.component';
-import { HomeComponent } from './Home/home.component';
-import { AboutComponent } from './About/about.component';
-import { QuestionsComponent } from './Quiz/Questions/questions.component';
-import { ResultsComponent } from './Quiz/Results/results.component';
+import { LearnSolidComponent } from './Pages/LearnSolid/learn-solid.component';
+import { HomeComponent } from './Pages/Home/home.component';
+import { AboutComponent } from './Pages/About/about.component';
+import { QuestionsComponent } from './Pages/Quiz/Questions/questions.component';
+import { ResultsComponent } from './Pages/Quiz/Results/results.component';
 import { AuthGuardService } from './Firebase/Auth/auth-guard.service';
 
 

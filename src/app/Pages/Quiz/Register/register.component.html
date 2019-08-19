@@ -27,7 +27,7 @@
 
 
 <div>
-    <mat-form-field *ngIf="this.submited && this.dataIsReady">
+    <mat-form-field *ngIf="this.dataIsReady">
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
 

@@ -1,0 +1,8 @@
+.btn { 
+    width: 250px; 
+    text-align: left
+}
+
+::ng-deep .mat-horizontal-stepper-header{
+    pointer-events: none !important;
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PointsService } from '../Points/points.service';
+import { PointsService } from '../../../Shared/Points/points.service';
 import * as firebase from 'firebase';
+import { AuthService } from 'src/app/Firebase/Auth/auth.service';
 
 @Component({
   selector: 'app-results',
@@ -16,27 +17,14 @@ export class ResultsComponent implements OnInit {
   mode: string = "indeterminate";
   userWithNoRecord: boolean = true;
 
-  constructor(private poinstService: PointsService) { }
+  constructor(private poinstService: PointsService, private authService: AuthService) { }
 
   //points from the points service
   @Input() points: number;
 
   ngOnInit() {
-    //see if is user
-    var user = firebase.auth().currentUser;
-
-    if (!user) {
-      console.log("Sign In called!");
-      //call anonymous sign in to track user quiz results
-      firebase.auth().signInAnonymously().catch((error) => {
-        // Handle Errors here.
-        console.log(error.code);
-        console.log(error.message);
-      });
-
     //call the method to display points in the results.
     this.getPoints();
-    }
   }
 
   //this method gets the points to display
@@ -55,7 +43,7 @@ export class ResultsComponent implements OnInit {
       }
       else {
         this.filtered_points = this.points.toString() + " of 20 points!";
-        
+
         //calculate the progress bar
         this.progress();
       }
@@ -73,5 +61,10 @@ export class ResultsComponent implements OnInit {
     }
 
     this.mode = "determinate";
+  }
+
+  isAuthenticated()
+  {
+    return this.authService.isAuthenticated();
   }
 }

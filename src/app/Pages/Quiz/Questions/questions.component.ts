@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { PointsService } from '../Points/points.service';
+import { PointsService } from '../../../Shared/Points/points.service';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from 'src/app/Firebase/Auth/auth.service';
 
 @Component({
   selector: 'app-questions',
@@ -60,7 +61,7 @@ export class QuestionsComponent implements OnInit, OnDestroy {
 
   //#endregion
 
-  constructor(private http: HttpClient, private pointsService: PointsService) { }
+  constructor(private http: HttpClient, private pointsService: PointsService, private authService: AuthService) { }
 
   ngOnInit() {
     //reset the click flag.
@@ -95,13 +96,18 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     }
   }
 
-  //this method returns if the click event was triggered
-  isClicked() {
-    return this.click;
-  }
-
   //this method clears the click event
   cleanClick() {
     this.click = false;
+  }
+
+  isClicked()
+  {
+    return this.click;
+  }
+
+  authenticateUser()
+  {
+   this.authService.authenticateAnonymously(); 
   }
 }

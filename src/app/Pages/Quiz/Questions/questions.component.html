@@ -426,7 +426,7 @@
                 inversion principle</button><button type="button" class="btn btn-danger" *ngIf="isClicked()">D —
                 Dependency inversion principle</button><br><br>
 
-            <button mat-stroked-button matStepperNext [disabled]="!isClicked()" routerLink="/Results">Done</button><br>
+            <button mat-stroked-button matStepperNext [disabled]="!isClicked()" routerLink="/Results" (click)="authenticateUser()">Done</button><br>
         </div>
         <div class="col-md-9">
             <mat-card *ngIf="!isClicked()">
