@@ -1,3 +1,30 @@
 <div class="col-md-12">
-    <p>You can learn about SOLID principles here!</p>
+    <h4>Pluralsight SOLID courses:</h4>
+    <a href="https://www.pluralsight.com/courses/csharp-solid-principles">SOLID Principles for C# Developers</a>
+    <br>
+    <a href="https://www.pluralsight.com/courses/defensive-coding-csharp">Defensive Coding in C#</a>
+    <h3>Single responsibility.</h3>
+    <p>A class should have only one responsibility. That means that for example, a Person class should only worry about
+        the domain problem regarding the person itself, and not for example, its persistence in the database. For that,
+        you may want to use a PersonDAO for example. A Person class may want to keep its responsibilities the shortest
+        it can. If a class is using too many external dependencies (that is, other classes), that's a symptom that the
+        class is having too many responsibilities. This problem often comes when developers try to model the real world
+        using objects and take it too far. Loosely coupled applications often are not very easy to navigate and do not
+        exactly model how the real world works.</p>
+    <h3>Open Closed.</h3>
+    <p>Classes should be extendible, but not modifiable. That means that adding a new field to a class is fine, but
+        changing existing things are not. Other components on the program may depend on said field.</p>
+    <h3>Liskov substitution.</h3>
+    <p>A class that expects an object of type animal should work if a subclass dog and a subclass cat are passed. That
+        means that Animal should NOT have a method called bark for example, since subclasses of type cat won't be able
+        to bark. Classes that use the Animal class, also shouldn't depend on methods that belong to a class Dog. Don't
+        do things like "If this animal is a dog, then (casts animal to dog) bark. If animal is a cat then (casts animal
+        to cat) meow".</p>
+    <h3>Interface segregation principle.</h3>
+    <p>Keep your interfaces the smallest you can. A teacher that also is a student should implement both the IStudent
+        and ITeacher interfaces, instead of a single big interface called IStudentAndTeacher.</p>
+    <h3>Dependency inversion principle.</h3>
+    <p>Objects should not instantiate their dependencies, but they should be passed to them. For example, a Car that has
+        an Engine object inside should not do engine = new DieselEngine(), but rather said engine should be passed to it
+        on the constructor. This way the car class will not be coupled to the DieselEngine class.</p>
 </div>

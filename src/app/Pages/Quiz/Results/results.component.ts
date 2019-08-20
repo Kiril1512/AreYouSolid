@@ -29,8 +29,6 @@ export class ResultsComponent implements OnInit {
 
   //this method gets the points to display
   getPoints() {
-    console.log("Get Points was triggered!");
-
     //setTimeout for bug correction as: https://github.com/angular/angular/issues/17572
     setTimeout(() => {
       //get the points
@@ -42,6 +40,7 @@ export class ResultsComponent implements OnInit {
         this.progress_points = 0;
       }
       else {
+        //tranform the points to the string of results
         this.filtered_points = this.points.toString() + " of 20 points!";
 
         //calculate the progress bar
@@ -49,22 +48,26 @@ export class ResultsComponent implements OnInit {
       }
     }, 1000)
 
+    //return the result to be displayed
     return this.filtered_points;
   }
 
   //this method calculates the value of the progress bar.
   progress() {
+    //calculate the progress
     this.progress_points = this.points * 100 / 20;
 
+    //pick the progress color (turns primary if positive)
     if (this.progress_points >= 50) {
       this.progress_color = "primary"
     }
 
+    //stops the bar from spinning
     this.mode = "determinate";
   }
 
-  isAuthenticated()
-  {
+  //this method returns if user is authenticated to display or not the results page
+  isAuthenticated() {
     return this.authService.isAuthenticated();
   }
 }

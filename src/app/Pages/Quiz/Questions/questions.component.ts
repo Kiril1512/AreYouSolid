@@ -101,13 +101,13 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     this.click = false;
   }
 
-  isClicked()
-  {
+  //this method returns if the button was clicked
+  isClicked() {
     return this.click;
   }
 
-  authenticateUser()
-  {
-   this.authService.authenticateAnonymously(); 
+  //this method calls the authentication method
+  authenticateUser() {
+    this.authService.authenticateAnonymously();
   }
 }

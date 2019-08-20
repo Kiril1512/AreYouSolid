@@ -11,14 +11,14 @@ import { AuthGuardService } from './Firebase/Auth/auth-guard.service';
 const routes: Routes = [
   { path: 'LearnSOLID', component: LearnSolidComponent },
   { path: 'About', component: AboutComponent },
-  { path: 'Questions', component: QuestionsComponent, canActivate: [AuthGuardService]},
-  { path: 'Results', component: ResultsComponent},
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'Questions', component: QuestionsComponent, canActivate: [AuthGuardService] },
+  { path: 'Results', component: ResultsComponent },
+  { path: '', redirectTo: '/Home', pathMatch: 'full' },
   { path: '**', component: HomeComponent } //caminho absoluto (home)
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,  { useHash: true })],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

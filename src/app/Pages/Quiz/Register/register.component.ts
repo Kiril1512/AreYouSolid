@@ -19,11 +19,14 @@ import { AuthService } from '../../../Firebase/Auth/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  //material variables
   name = new FormControl('', [Validators.required, Validators.minLength(3)]);
   displayedColumns: string[] = ['name', 'points'];
+  dataSource = new MatTableDataSource([]);
+
+  //variables
   data: data[] = new Array();
   submited: boolean = false;
-  dataSource = new MatTableDataSource([]);
   dataIsReady: boolean = false;
   nameToSubmit: string = null;
   noPointsForThisUser: boolean = false;
@@ -46,7 +49,6 @@ export class RegisterComponent implements OnInit {
   submit() {
     //check if is user
     if (this.authService.isAuthenticated()) {
-      console.log("I'm a user and I will submit the dada.");
 
       //trigger the submited flag.
       this.submited = true;
@@ -59,11 +61,9 @@ export class RegisterComponent implements OnInit {
 
       //check if he has points to submit
       if (this.pointsService.getPoints() != -1) {
-        console.log("I have points to upload!");
         this.postData(data);
       }
       else {
-        console.log("I don't have points to upload!");
         this.submited = true;
         this.dataIsReady = false;
         this.noPointsForThisUser = true;
@@ -71,6 +71,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  //this method calls and subscribes to the post request
   postData(data: data) {
     //call the request
     this.dataService.post(data).subscribe(response => {
@@ -79,12 +80,13 @@ export class RegisterComponent implements OnInit {
         this.getData();
       };
       error => {
-        console.log("Error: " + error);
-        console.log("Status Code: " + response.status);
+        console.log(error);
+        console.log(response.status);
       }
     });;
   }
 
+  //this method calls and subscribes to the get request to display the data
   getData() {
     //clear the data array for the new data
     this.data = new Array();
@@ -113,7 +115,6 @@ export class RegisterComponent implements OnInit {
 
   //this method check if user uploaded his results
   checkIfUserSubmitedData() {
-    console.log("I will check if user submited data!");
     //get current user uid
     var user = firebase.auth().currentUser.uid;
 
@@ -122,13 +123,11 @@ export class RegisterComponent implements OnInit {
       for (const key in response) {
         //check if this user is present in the data
         if (user == response[key].iud) {
-          console.log("I'm a user that submited data!");
           //load this user points
           this.pointsService.setExistingPoints(response[key].points);
 
           //if points are valid
           if (this.pointsService.getPoints() != -1) {
-            console.log("I have valid points!");
             this.submited = true;
 
             //refresh the points in the results section
@@ -137,12 +136,12 @@ export class RegisterComponent implements OnInit {
             //show the data
             this.getData();
 
+            //since the user is found, break the cicle
             break;
           }
         }
         else {
-          console.log("I'm a user that did not submited data!");
-          //if points are valid
+          //if points are not valid
           if (this.pointsService.getPoints() == -1) {
             this.noPointsForThisUser = true;
             this.submited = true;

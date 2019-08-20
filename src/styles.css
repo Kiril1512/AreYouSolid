@@ -5,3 +5,8 @@
 p{
     font-family: "Lucida Console", Monaco, monospace;
   }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}

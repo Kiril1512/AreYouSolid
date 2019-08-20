@@ -12,7 +12,7 @@ export class DataService {
 
   //this method post the data to the firebase.
   post(data: data) {
-    return this.http.post(this.url, data, { observe: 'response' });
+    return this.http.post<data>(this.url, data, { observe: 'response' });
   }
 
   //this method get the data from firebase.

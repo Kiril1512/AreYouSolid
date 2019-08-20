@@ -3,30 +3,30 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class PointsService {
 
-  points : number = -1;
+  //variable
+  points: number = -1;
 
   constructor() { }
 
-  addPoints(addPoints: number)
-  {
+  //this method add the points
+  addPoints(addPoints: number) {
     if (addPoints != null) {
       this.points += addPoints;
     }
-      
   }
 
-  getPoints(): number
-  {
-      return this.points;
+  //this method returns the current points
+  getPoints(): number {
+    return this.points;
   }
 
-  setPoints()
-  {
+  //this method sets the points to start the quiz
+  setPoints() {
     this.points = 0;
   }
 
-  setExistingPoints(pointsToSet: number)
-  {
+  //this method sets the provided points
+  setExistingPoints(pointsToSet: number) {
     this.points = pointsToSet;
   }
 }
