@@ -36,14 +36,15 @@ import "firebase/database";
 import { AuthGuardService } from './Firebase/Auth/auth-guard.service';
 import { AuthService } from './Firebase/Auth/auth.service';
 
+//replace this with your firebase aplication configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCSCJKzZGfkOObEU39jjx4halHdDiFkyrg",
-  authDomain: "areyousolid-8494d.firebaseapp.com",
-  databaseURL: "https://areyousolid-8494d.firebaseio.com",
-  projectId: "areyousolid-8494d",
+  apiKey: "yourApiKey",
+  authDomain: "yourAuthDomain",
+  databaseURL: "yourDataBaseURL",
+  projectId: "yourProjectID",
   storageBucket: "",
-  messagingSenderId: "640030276152",
-  appId: "1:640030276152:web:e8ec268ab01d699b"
+  messagingSenderId: "yourSenderID",
+  appId: "yourAppId"
 };
 
 // Initialize Firebase

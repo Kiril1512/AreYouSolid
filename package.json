@@ -29,7 +29,7 @@
     "highlight.js": "^9.15.9",
     "ng2-prism": "^2.3.2",
     "ngx-highlightjs": "^3.0.3",
-    "rxjs": "~6.4.0",
+    "rxjs": "~6.5.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
