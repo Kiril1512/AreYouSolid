@@ -77,12 +77,12 @@ Home page will give you the option to start the quiz or learn about SOLID. Learn
 
 You can answer the multiple questions and then the explanation for the correct answer.
 
-![Quiz](https://i.ibb.co/cXsPkcB/Questions.png)
-![QuizWithAnswer](https://i.ibb.co/23fXjx3/questions-With-Result.png)
+![Quiz](https://i.ibb.co/6Jq2rRM/Questions.png)
+![QuizWithAnswer](https://i.ibb.co/Zzkyh5z/questions-With-Result.png)
 
 Also there are some code questions.
 
-![Code Questions](https://i.ibb.co/mCn2J12/questions-With-Code-And-Results.png)
+![Code Questions](https://i.ibb.co/xSnBhPB/questions-With-Code-And-Results.png)
 
 At the end you will have your results which you can share.
 
