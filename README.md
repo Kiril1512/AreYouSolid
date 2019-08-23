@@ -1,6 +1,4 @@
-# AreYouSolid
-
-Innovation project to test SOLID and Defensive Programming skills.
+# Introduction
 
 This angular project was created in order to practice a niche of angular 2+ development and SOLID skills. It's a simple page where you can learn about SOLID principles and take a quiz of 15 questions about it. Next, you will be given a score which you can share and compare results with others.
 
