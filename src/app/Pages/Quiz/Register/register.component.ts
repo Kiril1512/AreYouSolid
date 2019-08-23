@@ -71,7 +71,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  //this method calls and subscribes to the post request
+  //this method calls the post request
   postData(data: data) {
     //call the request
     this.dataService.post(data).subscribe(response => {

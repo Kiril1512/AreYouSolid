@@ -24,9 +24,6 @@ export class HomeComponent implements OnInit {
         // User is signed in.
         this.isUser = true;
 
-        //get the data to show.
-        //this.registerComponent.getData();
-
       } else {
         // User is signed out, so sign in.
         this.isUser = false;
