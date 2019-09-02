@@ -22,22 +22,18 @@ This angular project was created in order to practice a niche of angular 2+ deve
 
 ### Installing
 
-1. First download or clone this repository.
-2. Then install the packages.
+- First download or clone this repository.
+- Then install the packages.
 
 ```node
 npm install
 ```
 
-3. Create a firebase project in the [Firebase Console](https://console.firebase.google.com/).
-
-4. Activate the anonymous provider in the **Authentication configuration** ```(https://console.firebase.google.com/project/<yourProject>/authentication/providers)```.
-
-5. Create a **Realtime Database** ```(https://console.firebase.google.com/project/<yourProject>/database)``` in the test mode (*These rules give anyone, even people who are not users of your app, read and write access to your database so you may change it later*).
-
-6. Create an aplication in the **Project settings** ```(https://console.firebase.google.com/project/<yourProject>/settings/general/)```.
-
-7. Save your aplication **configuration** and replace it at ```./src/app/app.module.ts```.
+- Create a firebase project in the [Firebase Console](https://console.firebase.google.com/).
+- Activate the anonymous provider in the **Authentication configuration** ```(https://console.firebase.google.com/project/<yourProject>/authentication/providers)```.
+- Create a **Realtime Database** ```(https://console.firebase.google.com/project/<yourProject>/database)``` in the test mode (*These rules give anyone, even people who are not users of your app, read and write access to your database so you may change it later*).
+- Create an aplication in the **Project settings** ```(https://console.firebase.google.com/project/<yourProject>/settings/general/)```.
+- Save your aplication **configuration** and replace it at ```./src/app/app.module.ts```.
 
 ```typescript
 const firebaseConfig = {
@@ -51,7 +47,7 @@ const firebaseConfig = {
 };
 ```
 
-8. Start the application.
+- Start the application.
 
 ```node
 ng serve --aot --open
@@ -59,7 +55,7 @@ ng serve --aot --open
 
 ## Authors
 
-* **Kyrylo Yavorenko** - *Full-Stack Developer* - [Linkedin](https://www.linkedin.com/in/kyryloyavorenko/)
+ **Kyrylo Yavorenko** - *Full-Stack Developer* - [Linkedin](https://www.linkedin.com/in/kyryloyavorenko/)
 
 See also the list of [contributors](https://github.com/Kiril1512/AreYouSolid/contributors) who participated in this project.
 
