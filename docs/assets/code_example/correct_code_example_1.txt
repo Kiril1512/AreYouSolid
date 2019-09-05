@@ -1,0 +1,25 @@
+...
+
+class MentionPost : Post
+{
+    override void CreatePost(Database db, string postMessage)
+    {
+        string user = postMessage.parseUser();
+
+        NotifyUser(user);
+        OverrideExistingMention(user, postMessage)
+        base.CreatePost(db, postMessage);
+    }
+
+    private void NotifyUser(string user)
+    {
+        db.NotifyUser(user);
+    }
+
+    private void OverrideExistingMention(string user, string postMessage)
+    {
+        db.OverrideExistingMention(_user, postMessage);
+    }
+}
+
+...
