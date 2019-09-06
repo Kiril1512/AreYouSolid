@@ -6,7 +6,7 @@ This angular project was created in order to practice a niche of angular 2+ deve
 
 1. [Firebase Anonymous Authentication](https://firebase.google.com/docs/auth/web/anonymous-auth?hl=en-US). These temporary anonymous accounts can be used to: track if a user has done the quiz; get the results; and work with data protected by security rules.
 
-2. [Firebase realtime Database](https://firebase.google.com/docs/database). Real time database alows a user to submit his score and see the other users' scores. You can't see other users' score if you did not submit your own results.
+2. [Firebase realtime Database](https://firebase.google.com/docs/database). Real time database allows a user to submit his score and see the other users' scores. You can't see other users' score if you did not submit your own results.
 
 3. [Angular Material](https://material.angular.io/). This was used to style the tables, spinners, buttons, etc...
 
