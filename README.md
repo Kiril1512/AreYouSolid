@@ -14,6 +14,10 @@ You can do the quiz [now](https://kiril1512.github.io/AreYouSolid/#/Home)!
 
 4. [ngx-highlightjs](https://github.com/MurhafSousli/ngx-highlightjs). This package allows the example codes to get highlight and not be displayed as simple text.
 
+## Getting started
+
+You can do the quiz now following [https://kiril1512.github.io/AreYouSolid/#/Home](https://kiril1512.github.io/AreYouSolid/#/Home) or run the project localy folowing the Installing instructions bellow.
+
 ### Prerequisites
 
 1. [Angular CLI](https://cli.angular.io/)
